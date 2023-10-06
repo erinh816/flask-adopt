@@ -47,8 +47,17 @@ def add_pet():
         notes = form.notes.data
 
         flash(f"Added {name}")
-        return redirect("/add")
+        return redirect("/")
 
     else:
         return render_template(
             "add-pet.html", form=form)
+
+
+@app.get('/<int:pet_id>')
+def show_a_pet(pet_id):
+    """show a pet's profile"""
+
+    pet = Pet.query.get_or_404(pet_id)
+
+    return render_template('pet_profile.html', pet=pet)
