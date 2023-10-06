@@ -9,10 +9,12 @@
 <p>{{ message }}</p>
 {% endfor %} -->
 
+<a href="/add">Add Pet</a>
+
 {% for pet in pets %}
 <a href="#">{{ pet.name }}</a>
 <div>
-  <img src="{{ pet.photo_url }}" alt="photo of pet">
+  <img src="{{ pet.photo_url }}" alt="photo of pet" style="width: 300px;">
 </div>
 
 {% if pet.available %}
