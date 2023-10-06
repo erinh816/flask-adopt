@@ -35,7 +35,7 @@ class Pet(db.Model):
         nullable=False
     )
 
-    photo_url =db.Column(
+    photo_url = db.Column(
         db.Text,
         nullable=False,
         default=''
