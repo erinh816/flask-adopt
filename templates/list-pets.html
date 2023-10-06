@@ -10,15 +10,15 @@
 {% endfor %} -->
 
 {% for pet in pets %}
-  <a href="#">{{ pet.name }}</a>
-  <div>
-    <img src="{{ pet.photo_url }}" alt="photo of pet">
-  </div>
+<a href="#">{{ pet.name }}</a>
+<div>
+  <img src="{{ pet.photo_url }}" alt="photo of pet">
+</div>
 
-  {% if pet.available is True %}
-  <h2><b>Available</b></h2>
-  {% endif %}
+{% if pet.available %}
+<h2><b>Available</b></h2>
+{% endif %}
 
-  {% endfor %}
+{% endfor %}
 
 {% endblock %}
