@@ -13,7 +13,7 @@ db.create_all()
 # Pet.query.delete()
 
 # Add pets
-woofly = Pet(name='Woofly', species="dog", photo_url="", age="baby",
+woofly = Pet(name='Woofly', species="dog", photo_url= '', age="baby",
 notes="good dog", available=True)
 porchetta = Pet(name='Porchetta', species="porcupine",
 photo_url="https://i5.walmartimages.com/seo/Aurora-Medium-Black-Miyoni-10-Porcupine-Adorable-Stuffed-Animal_daa288a5-a706-42a3-828f-831e71802456.1108efc1d57876d093360fd467bdba1f.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",

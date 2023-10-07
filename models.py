@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+DEFAULT_IMAGE = 'https://tcvets.com/wp-content/uploads/sites/164/2022/06/tcvets-placeholder-1.png'
+
 
 def connect_db(app):
     """Connect this database to provided Flask app.
@@ -38,7 +40,7 @@ class Pet(db.Model):
     photo_url = db.Column(
         db.Text,
         nullable=False,
-        default=''
+        default=DEFAULT_IMAGE
     )
 
     age = db.Column(

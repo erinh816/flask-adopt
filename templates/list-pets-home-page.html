@@ -2,25 +2,48 @@
 
 {% block title %} List Of Pets {% endblock %}
 
-<!-- BOILERPLATE FOR FLASH MESSAGING
-  {% block content %}
-
-{% for message in get_flashed_messages() %}
-<p>{{ message }}</p>
-{% endfor %} -->
-
-<a href="/add">Add Pet</a>
-
+{% block content %}
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 10vh;">
+  <a href="/add" class="btn btn-info">Add Pet</a>
+</div>
+<!--
 {% for pet in pets %}
-<a href="/{{ pet.id }}">{{ pet.name }}</a>
-<div>
-  <img src="{{ pet.photo_url }}" alt="photo of pet" style="width: 300px;">
+<div class="container">
+  <a class="btn btn-primary" href="/{{ pet.id }}">{{ pet.name }}</a>
+
+  {% if pet.available %}
+  <h2><b>Available</b></h2>
+
+  {% endif %}
+
+  <div>
+    <img src="{{ pet.photo_url }}" alt="photo of pet" style="width: 300px;">
+  </div>
+
+
 </div>
 
-{% if pet.available %}
-<h2><b>Available</b></h2>
-{% endif %}
 
-{% endfor %}
+{% endfor %} -->
+
+
+<div class="container">
+  <div class="row">
+    {% for pet in pets %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="{{ pet.photo_url }}" alt="photo of pet" class="card-img-top" style="width: 300px;">
+        <div class="card-body">
+          <h5 class="card-title">{{ pet.name }}</h5>
+          {% if pet.available %}
+          <h6 class="card-subtitle mb-2 text-success">Available</h6>
+          {% endif %}
+          <a href="/{{ pet.id }}" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
