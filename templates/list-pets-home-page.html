@@ -12,7 +12,7 @@
 <a href="/add">Add Pet</a>
 
 {% for pet in pets %}
-<a href="#">{{ pet.name }}</a>
+<a href="/{{ pet.id }}">{{ pet.name }}</a>
 <div>
   <img src="{{ pet.photo_url }}" alt="photo of pet" style="width: 300px;">
 </div>
